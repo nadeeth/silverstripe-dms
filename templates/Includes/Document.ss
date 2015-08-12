@@ -1,5 +1,6 @@
 <% if isHidden != true %>
 <div class="document $Extension">
+	<% if $CustomIcon %>$CustomIcon<% end_if %>
 	<% if Title %>
 		<h4><a href="$Link" title="Download $Title">$Title</a></h4>
 	<% else %>

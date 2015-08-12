@@ -18,6 +18,10 @@ class DMSDocument extends DataObject implements DMSDocumentInterface {
 		"EmbargoedUntilDate" => 'SS_DateTime',
 		"ExpireAtDate" => 'SS_DateTime'
 	);
+	
+	private static $has_one = array(
+        'CustomIcon' => 'Image',
+	);
 
 	private static $many_many = array(
 		'Pages' => 'SiteTree',
@@ -845,6 +849,7 @@ class DMSDocument extends DataObject implements DMSDocumentInterface {
 
 		$fields->add(new TextField('Title','Title'));
 		$fields->add(new TextareaField('Description','Description'));
+		$fields->add(new UploadField('CustomIcon','Icon'));
 
 		//create upload field to replace document
 		$uploadField = new DMSUploadField('ReplaceFile', 'Replace file');
